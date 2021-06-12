@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Restriccion{% endblock %}
+
+{% block body %}
+    <h1>Edit Restriccion</h1>
+
+    {{ include('restriccion/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('restriccion_index') }}">back to list</a>
+
+    {{ include('restriccion/_delete_form.html.twig') }}
+{% endblock %}

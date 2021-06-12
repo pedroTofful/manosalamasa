@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restriccion{% endblock %}
+
+{% block body %}
+    <h1>Restriccion</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ restriccion.id }}</td>
+            </tr>
+            <tr>
+                <th>RestriccionDsc</th>
+                <td>{{ restriccion.restriccionDsc }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('restriccion_index') }}">back to list</a>
+
+    <a href="{{ path('restriccion_edit', {'id': restriccion.id}) }}">edit</a>
+
+    {{ include('restriccion/_delete_form.html.twig') }}
+{% endblock %}
