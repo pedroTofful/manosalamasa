@@ -36,7 +36,11 @@ class LoginController extends AbstractController
             return $this->render('login/error.html.twig', [
             ]);
         } else {
-            return $this->redirectToRoute('receta_index');
+            if ($externo->getExternoActivo()) {
+                return $this->redirectToRoute('receta_index');
+            } else {
+                return $this->redirectToRoute('login/erroractivo.html.twig');
+            }
         }
     }
 }
