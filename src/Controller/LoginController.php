@@ -11,7 +11,7 @@ use App\Entity\Externo;
 
 class LoginController extends AbstractController
 {
-    #[Route('/login', name: 'login')]
+    #[Route('/', name: 'login')]
     public function index(): Response
     {
         return $this->render('login/index.html.twig', [
