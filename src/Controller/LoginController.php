@@ -11,7 +11,7 @@ use App\Entity\Externo;
 
 class LoginController extends AbstractController
 {
-    #[Route('/', name: 'login')]
+    #[Route('/login', name: 'login')]
     public function index(): Response
     {
         return $this->render('login/index.html.twig', [
@@ -36,11 +36,7 @@ class LoginController extends AbstractController
             return $this->render('login/error.html.twig', [
             ]);
         } else {
-            if ($externo->getExternoActivo()) {
-                return $this->redirectToRoute('receta_index');
-            } else {
-                return $this->redirectToRoute('login/erroractivo.html.twig');
-            }
+            return $this->redirectToRoute('receta_index');
         }
     }
 }
